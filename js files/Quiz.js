@@ -1,8 +1,8 @@
 
-import  * as main  from "../js files/main.js";
-import questions  from "../js files/questions.js";
-import * as evaluation from "../js files/evaluation.js";
-import myAnswers from "../js files/myAnswers.js";
+import  * as main  from "./main.js";
+import questions  from "./questions.js";
+import * as evaluation from "./evaluation.js";
+import myAnswers from "./myAnswers.js";
 
 export default class Quiz {
 
@@ -109,7 +109,7 @@ export default class Quiz {
 
     restart(){
         myAnswers.length = 0
-        new Audio('../sound efx/interface-1-126517.mp3').play()
+        new Audio('sound efx/interface-1-126517.mp3').play()
         
         this.index = 0
         this.score = 0
@@ -127,7 +127,7 @@ export default class Quiz {
     correct(){
         main.innerScore.textContent = ` ${++this.score}`
 
-        new Audio('../sound efx/good-6081.mp3').play()
+        new Audio('sound efx/good-6081.mp3').play()
 
         this.result = this.score == questions.length
         ? 'PERFECT' : this.score > 2
@@ -142,7 +142,7 @@ export default class Quiz {
 
         this.nextQuestion()
     
-        new Audio('../sound efx/error-2-36058.mp3').play()
+        new Audio('sound efx/error-2-36058.mp3').play()
     
         setTimeout(() => {
             main.parEl.textContent = ''
